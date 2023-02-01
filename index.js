@@ -8,4 +8,3 @@ if (SECRETKEY === '1234') {
 
 console.log(SECRETKEY)
 console.log(process.env.SECRETKEY)
-console.log(process.env)
