@@ -1,9 +1,10 @@
 require('dotenv/config');
 
-const { secretKey } = process.env;
+const { SECRETKEY } = process.env;
 
-if (secretKey === '1234') {
+if (SECRETKEY === '1234') {
     console.log('Success!');
 } else {
+    console.log(SECRETKEY)
     console.log('Failure :(');
 }
