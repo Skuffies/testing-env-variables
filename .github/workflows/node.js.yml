@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
     
 env:
-  secretKey: ${{ secrets.SECRETKEY }}
+  SECRETKEY: ${{ secrets.SECRETKEY }}
     
 jobs:
   build:
@@ -19,8 +19,7 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-      continue-on-error: true
-    - run: npm i 
-    - run: pm2 stop 4
+    - run: npm i
+    - run: pm2 stop 4 
     - run: pm2 start 4
     - run: pm2 save
