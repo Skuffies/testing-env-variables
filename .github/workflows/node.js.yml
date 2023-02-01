@@ -16,9 +16,9 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        - run: node -e "console.log(process.env.SECRETKEY)"
-              env:
-                SECRETKEY: ${{ secrets.SECRETKEY }}
+    - run: node -e "console.log(process.env.SECRETKEY)"
+      env:
+        SECRETKEY: ${{ secrets.SECRETKEY }}
     - run: npm i
     - run: pm2 stop 4 
     - run: pm2 start 4
